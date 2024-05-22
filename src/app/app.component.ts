@@ -88,11 +88,12 @@ export class AppComponent implements OnInit {
 
   task: string = '';
   tasks: { name: string, completed: boolean }[] = [];
+  hasTask = false;
 
   addTask() {
     if (this.task.trim() === '') {
-      alert("you must write something!");
-      return;
+      this.hasTask = true;
+      return
     }
     this.tasks.push({ name: this.task, completed: false });
     this.task = '';
