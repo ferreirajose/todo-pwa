@@ -1,0 +1,7 @@
+Instalar o angular PWA na versão do angular ex: angular 14 = PWA 14
+evitar o erro:
+
+NOT SUPPORTED: keyword "id", use "$id" for schema ID
+
+1 - npm i @angular/pwa@14.2.13
+2 - ng add @angular/pwa
