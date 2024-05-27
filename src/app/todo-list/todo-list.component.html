@@ -1,0 +1,23 @@
+<div class="todo-app">
+  <div class="app-title">
+      <h2>Todo TCE</h2>
+      <i class="fa-solid fa-book-bookmark"></i>
+  </div>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" [(ngModel)]="task" placeholder="Nome da tarefa" aria-label="Nome da tarefa" aria-describedby="button-adicionar">
+    <button class="btn btn-danger" type="button" id="button-adicionar" (click)="addTask()">Adicionar</button>
+  </div>
+
+
+  <div class="alert alert-warning center" *ngIf="hasTask">
+    <strong>Atenção!</strong>Informe uma tarefa
+  </div>
+
+  <ul id="list-container" class="list-group">
+    <li *ngFor="let task of tasks" class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{'checked': task.completed}" (click)="toggleTaskCompletion(task)">
+      {{ task.name }}
+          <span (click)="deleteTask(task)">x</span>
+      </li>
+  </ul>
+</div>
